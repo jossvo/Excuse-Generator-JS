@@ -4,6 +4,10 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
+function randomElement(arr) {
+  let random = Math.floor(Math.random() * arr.length);
+  return arr[random];
+}
 
 window.onload = function() {
   //write your code here
@@ -17,19 +21,15 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
-  let whoR = Math.floor(Math.random() * 4);
-  let actionR = Math.floor(Math.random() * 4);
-  let whatR = Math.floor(Math.random() * 4);
-  let whenR = Math.floor(Math.random() * 5);
 
   let respone =
-    who[whoR.toString()] +
+    randomElement(who) +
     " " +
-    action[actionR.toString()] +
+    randomElement(action) +
     " " +
-    what[whatR.toString()] +
+    randomElement(what) +
     " " +
-    when[whenR.toString()];
+    randomElement(when);
 
   document.getElementById("excuse").innerHTML = respone;
 };
